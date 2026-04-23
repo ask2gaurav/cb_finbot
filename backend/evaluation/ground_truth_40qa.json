@@ -1,0 +1,362 @@
+[
+  {
+    "id": "fin_001",
+    "collection": "finance",
+    "question": "Sample factoid question 1 for finance?",
+    "ground_truth": "This is the ground truth answer for finance factoid question 1.",
+    "context_chunks": [
+      "Sample context chunk for finance."
+    ]
+  },
+  {
+    "id": "fin_002",
+    "collection": "finance",
+    "question": "Sample factoid question 2 for finance?",
+    "ground_truth": "This is the ground truth answer for finance factoid question 2.",
+    "context_chunks": [
+      "Sample context chunk for finance."
+    ]
+  },
+  {
+    "id": "fin_003",
+    "collection": "finance",
+    "question": "Sample factoid question 3 for finance?",
+    "ground_truth": "This is the ground truth answer for finance factoid question 3.",
+    "context_chunks": [
+      "Sample context chunk for finance."
+    ]
+  },
+  {
+    "id": "fin_004",
+    "collection": "finance",
+    "question": "Sample factoid question 4 for finance?",
+    "ground_truth": "This is the ground truth answer for finance factoid question 4.",
+    "context_chunks": [
+      "Sample context chunk for finance."
+    ]
+  },
+  {
+    "id": "fin_005",
+    "collection": "finance",
+    "question": "Sample factoid question 5 for finance?",
+    "ground_truth": "This is the ground truth answer for finance factoid question 5.",
+    "context_chunks": [
+      "Sample context chunk for finance."
+    ]
+  },
+  {
+    "id": "fin_006",
+    "collection": "finance",
+    "question": "Sample multi-hop question 1 for finance?",
+    "ground_truth": "This is the ground truth answer for finance multi-hop question 1.",
+    "context_chunks": [
+      "Sample context chunk for finance."
+    ]
+  },
+  {
+    "id": "fin_007",
+    "collection": "finance",
+    "question": "Sample multi-hop question 2 for finance?",
+    "ground_truth": "This is the ground truth answer for finance multi-hop question 2.",
+    "context_chunks": [
+      "Sample context chunk for finance."
+    ]
+  },
+  {
+    "id": "fin_008",
+    "collection": "finance",
+    "question": "Sample multi-hop question 3 for finance?",
+    "ground_truth": "This is the ground truth answer for finance multi-hop question 3.",
+    "context_chunks": [
+      "Sample context chunk for finance."
+    ]
+  },
+  {
+    "id": "fin_009",
+    "collection": "finance",
+    "question": "Sample comparative question 1 for finance?",
+    "ground_truth": "This is the ground truth answer for finance comparative question 1.",
+    "context_chunks": [
+      "Sample context chunk for finance."
+    ]
+  },
+  {
+    "id": "fin_010",
+    "collection": "finance",
+    "question": "Sample comparative question 2 for finance?",
+    "ground_truth": "This is the ground truth answer for finance comparative question 2.",
+    "context_chunks": [
+      "Sample context chunk for finance."
+    ]
+  },
+  {
+    "id": "eng_011",
+    "collection": "engineering",
+    "question": "Sample factoid question 1 for engineering?",
+    "ground_truth": "This is the ground truth answer for engineering factoid question 1.",
+    "context_chunks": [
+      "Sample context chunk for engineering."
+    ]
+  },
+  {
+    "id": "eng_012",
+    "collection": "engineering",
+    "question": "Sample factoid question 2 for engineering?",
+    "ground_truth": "This is the ground truth answer for engineering factoid question 2.",
+    "context_chunks": [
+      "Sample context chunk for engineering."
+    ]
+  },
+  {
+    "id": "eng_013",
+    "collection": "engineering",
+    "question": "Sample factoid question 3 for engineering?",
+    "ground_truth": "This is the ground truth answer for engineering factoid question 3.",
+    "context_chunks": [
+      "Sample context chunk for engineering."
+    ]
+  },
+  {
+    "id": "eng_014",
+    "collection": "engineering",
+    "question": "Sample factoid question 4 for engineering?",
+    "ground_truth": "This is the ground truth answer for engineering factoid question 4.",
+    "context_chunks": [
+      "Sample context chunk for engineering."
+    ]
+  },
+  {
+    "id": "eng_015",
+    "collection": "engineering",
+    "question": "Sample factoid question 5 for engineering?",
+    "ground_truth": "This is the ground truth answer for engineering factoid question 5.",
+    "context_chunks": [
+      "Sample context chunk for engineering."
+    ]
+  },
+  {
+    "id": "eng_016",
+    "collection": "engineering",
+    "question": "Sample multi-hop question 1 for engineering?",
+    "ground_truth": "This is the ground truth answer for engineering multi-hop question 1.",
+    "context_chunks": [
+      "Sample context chunk for engineering."
+    ]
+  },
+  {
+    "id": "eng_017",
+    "collection": "engineering",
+    "question": "Sample multi-hop question 2 for engineering?",
+    "ground_truth": "This is the ground truth answer for engineering multi-hop question 2.",
+    "context_chunks": [
+      "Sample context chunk for engineering."
+    ]
+  },
+  {
+    "id": "eng_018",
+    "collection": "engineering",
+    "question": "Sample multi-hop question 3 for engineering?",
+    "ground_truth": "This is the ground truth answer for engineering multi-hop question 3.",
+    "context_chunks": [
+      "Sample context chunk for engineering."
+    ]
+  },
+  {
+    "id": "eng_019",
+    "collection": "engineering",
+    "question": "Sample comparative question 1 for engineering?",
+    "ground_truth": "This is the ground truth answer for engineering comparative question 1.",
+    "context_chunks": [
+      "Sample context chunk for engineering."
+    ]
+  },
+  {
+    "id": "eng_020",
+    "collection": "engineering",
+    "question": "Sample comparative question 2 for engineering?",
+    "ground_truth": "This is the ground truth answer for engineering comparative question 2.",
+    "context_chunks": [
+      "Sample context chunk for engineering."
+    ]
+  },
+  {
+    "id": "mar_021",
+    "collection": "marketing",
+    "question": "Sample factoid question 1 for marketing?",
+    "ground_truth": "This is the ground truth answer for marketing factoid question 1.",
+    "context_chunks": [
+      "Sample context chunk for marketing."
+    ]
+  },
+  {
+    "id": "mar_022",
+    "collection": "marketing",
+    "question": "Sample factoid question 2 for marketing?",
+    "ground_truth": "This is the ground truth answer for marketing factoid question 2.",
+    "context_chunks": [
+      "Sample context chunk for marketing."
+    ]
+  },
+  {
+    "id": "mar_023",
+    "collection": "marketing",
+    "question": "Sample factoid question 3 for marketing?",
+    "ground_truth": "This is the ground truth answer for marketing factoid question 3.",
+    "context_chunks": [
+      "Sample context chunk for marketing."
+    ]
+  },
+  {
+    "id": "mar_024",
+    "collection": "marketing",
+    "question": "Sample factoid question 4 for marketing?",
+    "ground_truth": "This is the ground truth answer for marketing factoid question 4.",
+    "context_chunks": [
+      "Sample context chunk for marketing."
+    ]
+  },
+  {
+    "id": "mar_025",
+    "collection": "marketing",
+    "question": "Sample factoid question 5 for marketing?",
+    "ground_truth": "This is the ground truth answer for marketing factoid question 5.",
+    "context_chunks": [
+      "Sample context chunk for marketing."
+    ]
+  },
+  {
+    "id": "mar_026",
+    "collection": "marketing",
+    "question": "Sample multi-hop question 1 for marketing?",
+    "ground_truth": "This is the ground truth answer for marketing multi-hop question 1.",
+    "context_chunks": [
+      "Sample context chunk for marketing."
+    ]
+  },
+  {
+    "id": "mar_027",
+    "collection": "marketing",
+    "question": "Sample multi-hop question 2 for marketing?",
+    "ground_truth": "This is the ground truth answer for marketing multi-hop question 2.",
+    "context_chunks": [
+      "Sample context chunk for marketing."
+    ]
+  },
+  {
+    "id": "mar_028",
+    "collection": "marketing",
+    "question": "Sample multi-hop question 3 for marketing?",
+    "ground_truth": "This is the ground truth answer for marketing multi-hop question 3.",
+    "context_chunks": [
+      "Sample context chunk for marketing."
+    ]
+  },
+  {
+    "id": "mar_029",
+    "collection": "marketing",
+    "question": "Sample comparative question 1 for marketing?",
+    "ground_truth": "This is the ground truth answer for marketing comparative question 1.",
+    "context_chunks": [
+      "Sample context chunk for marketing."
+    ]
+  },
+  {
+    "id": "mar_030",
+    "collection": "marketing",
+    "question": "Sample comparative question 2 for marketing?",
+    "ground_truth": "This is the ground truth answer for marketing comparative question 2.",
+    "context_chunks": [
+      "Sample context chunk for marketing."
+    ]
+  },
+  {
+    "id": "emp_031",
+    "collection": "employee",
+    "question": "Sample factoid question 1 for employee?",
+    "ground_truth": "This is the ground truth answer for employee factoid question 1.",
+    "context_chunks": [
+      "Sample context chunk for employee."
+    ]
+  },
+  {
+    "id": "emp_032",
+    "collection": "employee",
+    "question": "Sample factoid question 2 for employee?",
+    "ground_truth": "This is the ground truth answer for employee factoid question 2.",
+    "context_chunks": [
+      "Sample context chunk for employee."
+    ]
+  },
+  {
+    "id": "emp_033",
+    "collection": "employee",
+    "question": "Sample factoid question 3 for employee?",
+    "ground_truth": "This is the ground truth answer for employee factoid question 3.",
+    "context_chunks": [
+      "Sample context chunk for employee."
+    ]
+  },
+  {
+    "id": "emp_034",
+    "collection": "employee",
+    "question": "Sample factoid question 4 for employee?",
+    "ground_truth": "This is the ground truth answer for employee factoid question 4.",
+    "context_chunks": [
+      "Sample context chunk for employee."
+    ]
+  },
+  {
+    "id": "emp_035",
+    "collection": "employee",
+    "question": "Sample factoid question 5 for employee?",
+    "ground_truth": "This is the ground truth answer for employee factoid question 5.",
+    "context_chunks": [
+      "Sample context chunk for employee."
+    ]
+  },
+  {
+    "id": "emp_036",
+    "collection": "employee",
+    "question": "Sample multi-hop question 1 for employee?",
+    "ground_truth": "This is the ground truth answer for employee multi-hop question 1.",
+    "context_chunks": [
+      "Sample context chunk for employee."
+    ]
+  },
+  {
+    "id": "emp_037",
+    "collection": "employee",
+    "question": "Sample multi-hop question 2 for employee?",
+    "ground_truth": "This is the ground truth answer for employee multi-hop question 2.",
+    "context_chunks": [
+      "Sample context chunk for employee."
+    ]
+  },
+  {
+    "id": "emp_038",
+    "collection": "employee",
+    "question": "Sample multi-hop question 3 for employee?",
+    "ground_truth": "This is the ground truth answer for employee multi-hop question 3.",
+    "context_chunks": [
+      "Sample context chunk for employee."
+    ]
+  },
+  {
+    "id": "emp_039",
+    "collection": "employee",
+    "question": "Sample comparative question 1 for employee?",
+    "ground_truth": "This is the ground truth answer for employee comparative question 1.",
+    "context_chunks": [
+      "Sample context chunk for employee."
+    ]
+  },
+  {
+    "id": "emp_040",
+    "collection": "employee",
+    "question": "Sample comparative question 2 for employee?",
+    "ground_truth": "This is the ground truth answer for employee comparative question 2.",
+    "context_chunks": [
+      "Sample context chunk for employee."
+    ]
+  }
+]

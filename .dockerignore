@@ -1,0 +1,20 @@
+# Frontend
+node_modules/
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.react-router/
+
+# Backend
+backend/venv/
+backend/__pycache__/
+backend/qdrant_data/
+backend/mongodb_data/
+*.pyc
+*.pyo
+*.pyd
+
+# Git & environments
+.git/
+.env
+.env.local

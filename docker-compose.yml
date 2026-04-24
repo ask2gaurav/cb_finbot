@@ -14,9 +14,14 @@ services:
       - qdrant
     develop:
       watch:
+        - path: ./backend/requirements.txt
+          action: rebuild
         - path: ./backend
           action: sync
           target: /app
+          ignore:
+            - __pycache__/
+            - .venv/
     volumes:
       - ./backend:/app
     command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
@@ -25,14 +30,25 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.frontend
+      target: builder
+    command: pnpm dev
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3000
     ports:
       - "3000:3000"
     env_file: .env
     develop:
       watch:
+        - path: ./frontend/package.json
+          action: rebuild
+        - path: ./frontend/pnpm-lock.yaml
+          action: rebuild
         - path: ./frontend
           action: sync
-          target: ./frontend
+          target: /app
+          ignore:
+            - node_modules/
 
   mongodb:
     image: mongo:7.0

@@ -1,5 +1,6 @@
 services:
   backend:
+    image: ask2gaurav/codebasics_a1_backend
     build: 
       context: .
       dockerfile: Dockerfile.backend
@@ -27,6 +28,7 @@ services:
     command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 
   frontend:
+    image: ask2gaurav/codebasics_a1_frontend
     build:
       context: .
       dockerfile: Dockerfile.frontend

@@ -27,8 +27,15 @@ async def chat_stream(
     db = Depends(get_db)
 ):
     async def event_generator():
+        logger.info("Chat query received", message=request.message, user_id=str(current_user.id), role=current_user.role)
+        yield f"data: {json.dumps({'type': 'token', 'content': 'generating...'})}\n\n"
         try:
             retrieved_docs = await retrieve(request.message, current_user.role, top_k=5)
+            
+            if not retrieved_docs:
+                yield f"data: {json.dumps({'type': 'error', 'content': 'There is no relevant data found for given query.'})}\n\n"
+                return
+                
             context_str, context_meta = await format_docs(retrieved_docs)
             
             chain = get_generation_chain(current_user.role)
@@ -39,6 +46,7 @@ async def chat_stream(
                 yield f"data: {json.dumps({'type': 'token', 'content': chunk})}\n\n"
                 
             guard_result = await run_guardrails(full_response, context_meta, current_user.role)
+            logger.info("Chat response generated", final_answer=guard_result.final_answer, flags=guard_result.flags, blocked=guard_result.blocked)
             
             conv_id = request.conversation_id
             if not conv_id:

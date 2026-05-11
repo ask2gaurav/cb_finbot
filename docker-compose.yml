@@ -25,9 +25,7 @@ services:
       - "80:80"
     volumes:
       - ./config/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-    depends_on:
-      - backend
-      - frontend
+          
 
   backend:
     image: ask2gaurav/codebasics_a1_backend
@@ -40,6 +38,15 @@ services:
     environment:
       MONGODB_URI: "mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@mongodb:27017"
       QDRANT_HOST: qdrant
+    healthcheck:
+      # The command to run inside the container
+      #test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      #python3 -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"
+      interval: 30s        # Time between checks
+      timeout: 10s         # Time to wait for a response
+      retries: 3           # Failures needed to mark "unhealthy"
+      start_period: 5s     # Grace period for the app to start
     depends_on:
       - mongodb
       - qdrant
@@ -71,7 +78,8 @@ services:
       - "3000:3000"
     env_file: .env
     depends_on:
-      - backend
+     backend:
+       condition: service_healthy
     develop:
       watch:
         - path: ./frontend/package.json

@@ -23,7 +23,8 @@ async def process_document(file_path: str, filename: str, role: str, doc_id: str
         texts = [chunk.text for chunk in chunks]
         embeddings = await embed_chunks(texts)
 
-        collection_name = f"rag_{role}"
+        #collection_name = f"rag_{role}"
+        collection_name = os.getenv("RAG_COLLECTION_NAME", "finbot_documents")
         await init_collection(collection_name)
         await index_chunks(collection_name, chunks, embeddings, role, str(doc_id), uploaded_by, uploaded_at)
 

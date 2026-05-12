@@ -1,5 +1,7 @@
 import os
 import aiofiles
+import shutil
+from pathlib import Path
 from fastapi import APIRouter, Depends, UploadFile, File, Form, BackgroundTasks, HTTPException
 from core.dependencies import require_role, get_current_user
 from models.user import UserResponse
@@ -28,10 +30,10 @@ async def process_document(file_path: str, filename: str, role: str, doc_id: str
         await init_collection(collection_name)
         await index_chunks(collection_name, chunks, embeddings, role, str(doc_id), uploaded_by, uploaded_at)
 
-        if role != "c_level":
-            c_level_collection = "rag_c_level"
-            await init_collection(c_level_collection)
-            await index_chunks(c_level_collection, chunks, embeddings, role, str(doc_id), uploaded_by, uploaded_at)
+        # if role != "c_level":
+        #     c_level_collection = "rag_c_level"
+        #     await init_collection(c_level_collection)
+        #     await index_chunks(c_level_collection, chunks, embeddings, role, str(doc_id), uploaded_by, uploaded_at)
 
         await db.documents.update_one(
             {"_id": doc_id},
@@ -45,9 +47,9 @@ async def process_document(file_path: str, filename: str, role: str, doc_id: str
             {"_id": doc_id},
             {"$set": {"status": "failed", "error": str(e)}}
         )
-    finally:
-        if os.path.exists(file_path):
-            os.remove(file_path)
+    #finally:
+        # if os.path.exists(file_path):
+        #     os.remove(file_path)
 
 @router.post("/upload")
 async def upload_document(
@@ -75,7 +77,7 @@ async def upload_document(
     async with aiofiles.open(temp_path, 'wb') as out_file:
         content = await file.read()
         await out_file.write(content)
-        
+    doc.filepath = temp_path    
     doc_dict = doc.model_dump(by_alias=True)
     await db.documents.insert_one(doc_dict)
     
@@ -119,24 +121,33 @@ async def delete_document(
     from services.ingestion.indexer import qdrant_client
     
     role = doc["role"]
+    filename = doc.get("filename") or doc["filename"] or ""
+    filepath = doc.get("filepath") or ""
+    stem = Path(filename).stem
+    delete_dir = Path(Path(__file__).parent).parent / "services" / "markdown_output" / f"{stem}"
+    if os.path.exists(delete_dir):
+        shutil.rmtree(delete_dir)
+    if filepath and os.path.exists(filepath):
+        os.remove(filepath)
     try:
         await qdrant_client.delete(
-            collection_name=f"rag_{role}",
+            #collection_name=f"rag_{role}",
+            collection_name=os.getenv("RAG_COLLECTION_NAME", "finbot_documents"),
             points_selector=Filter(
                 must=[
                     FieldCondition(key="doc_id", match=MatchValue(value=doc_id))
                 ]
             )
         )
-        if role != "c_level":
-            await qdrant_client.delete(
-                collection_name="rag_c_level",
-                points_selector=Filter(
-                    must=[
-                        FieldCondition(key="doc_id", match=MatchValue(value=doc_id))
-                    ]
-                )
-            )
+        # if role != "c_level":
+        #     await qdrant_client.delete(
+        #         collection_name="rag_c_level",
+        #         points_selector=Filter(
+        #             must=[
+        #                 FieldCondition(key="doc_id", match=MatchValue(value=doc_id))
+        #             ]
+        #         )
+        #     )
     except Exception as e:
         logger.error("Failed to delete from Qdrant", error=str(e))
         

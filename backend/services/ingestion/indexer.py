@@ -31,8 +31,9 @@ async def index_chunks(collection_name: str, chunks: list, embeddings: list, rol
         payload = chunk.metadata.copy()
         payload.update({
             "doc_id": doc_id,
-            "role": role,
-            "text": chunk.text,
+            "collection": role,
+            #"access_roles":access_roles := ["c_level"] if role != "c_level" else ["finance", "engineering", "marketing", "employee", "c_level"],
+            #"text": chunk.text,
             "uploaded_by": str(uploaded_by),
             "uploaded_at": str(uploaded_at)
         })

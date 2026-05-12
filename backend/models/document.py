@@ -6,6 +6,7 @@ import uuid
 class DocumentModel(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()), alias="_id")
     filename: str
+    filepath: str = "unknown"
     role: str
     uploaded_by: str
     uploaded_at: datetime = Field(default_factory=datetime.utcnow)
